@@ -165,6 +165,7 @@ class GameService {
 
   checkBoardState = (state: GameState): "win" | "lose" | "progress" => {
     let result = "progress";
+    let wrongFlag = false;
     let totalCorrectFlagged = 0;
     let totalMines = 0;
     state.state.forEach((row, i) => {
@@ -173,6 +174,10 @@ class GameService {
           totalMines++;
           if (tileState === TileState.Flagged) {
             totalCorrectFlagged += 1;
+          }
+        } else {
+          if (tileState === TileState.Flagged) {
+            wrongFlag = true;
           }
         }
         if (tileState === TileState.Opened && state.board.mines[i][j]) {
@@ -183,6 +188,10 @@ class GameService {
 
     if (result === "lose") {
       return result;
+    }
+
+    if (wrongFlag) {
+      return "progress";
     }
 
     // Win Condition: All mines flagged
