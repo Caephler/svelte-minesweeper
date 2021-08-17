@@ -93,6 +93,13 @@
     "estree-walker" "^2.0.1"
     "picomatch" "^2.2.2"
 
+"@sveltejs/adapter-vercel@^1.0.0-next.27":
+  "integrity" "sha512-KiGDJXgjkj3MJvmQLXpE7pfQnN7dVx8pPgqcrFp8yziFrLMrvluklKmNqNei6JivQn5JVYxLojRgHpik1fdIOw=="
+  "resolved" "https://registry.npmjs.org/@sveltejs/adapter-vercel/-/adapter-vercel-1.0.0-next.27.tgz"
+  "version" "1.0.0-next.27"
+  dependencies:
+    "esbuild" "^0.12.5"
+
 "@sveltejs/kit@next":
   "integrity" "sha512-dioqHt4XxqiZ+5dEL6hFG1fBuVMc5t9l9bmvUeJX6neyut432IcVLdl4t3utmD10Lu8fbybJPRkHy1PVAbHWwQ=="
   "resolved" "https://registry.npmjs.org/@sveltejs/kit/-/kit-1.0.0-next.151.tgz"
@@ -753,7 +760,7 @@
   dependencies:
     "is-arrayish" "^0.2.1"
 
-"esbuild@^0.12.17":
+"esbuild@^0.12.17", "esbuild@^0.12.5":
   "integrity" "sha512-u7+0qTo9Z64MD9PhooEngCmzyEYJ6ovFhPp8PLNh3UasR5Ihjv6HWVXqm8uHmasdQlpsAf0IsY4U0YVUfCpt4Q=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.12.20.tgz"
   "version" "0.12.20"
