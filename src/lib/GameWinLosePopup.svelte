@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
   import { cubicOut, elasticOut } from "svelte/easing";
   export let winState: "win" | "lose" | "progress";
   export let reset: () => void;
