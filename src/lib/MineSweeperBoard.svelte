@@ -28,6 +28,10 @@
     gameService.openAllMines(state);
     state = state;
   }
+  $: if (gameService.checkBoardState(state) === "win") {
+    gameService.openAllTiles(state);
+    state = state;
+  }
 </script>
 
 <section class="flex flex-col items-center my-12">
@@ -38,6 +42,8 @@
         <div class="flex flex-col gap-2">
           {#each rowArr as value, col (col)}
             <MineSweeperTile
+              {winState}
+              index={{ x: row, y: col }}
               disabled={winState === "lose" || winState === "win"}
               open={() => open(row, col)}
               flag={() => flag(row, col)}

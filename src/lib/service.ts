@@ -211,6 +211,18 @@ class GameService {
       });
     });
   };
+
+  openAllTiles = (state: GameState) => {
+    state.state.forEach((row, i) => {
+      row.forEach((tileState, j) => {
+        if (state.board.mines[i][j]) {
+          return;
+        } else {
+          state.state[i][j] = TileState.Opened;
+        }
+      });
+    });
+  };
 }
 
 export const gameService = new GameService();

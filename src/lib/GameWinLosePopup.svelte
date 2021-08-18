@@ -1,7 +1,9 @@
 <script lang="ts">
   import { cubicOut, elasticOut } from "svelte/easing";
+  import { tweened } from "svelte/motion";
   export let winState: "win" | "lose" | "progress";
   export let reset: () => void;
+
   const spin = (node: Node, { duration }: { duration: number }) => {
     return {
       duration,
