@@ -1,4 +1,5 @@
 <script>
+  import Footer from "$lib/Footer.svelte";
   import MineSweeperBoard from "$lib/MineSweeperBoard.svelte";
 </script>
 
@@ -8,4 +9,5 @@
 
 <div class="container mx-auto">
   <MineSweeperBoard />
+  <Footer />
 </div>

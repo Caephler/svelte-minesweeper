@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { TileState } from "./types";
-  import type { Vec2d } from "./types";
-  import { tweened } from "svelte/motion";
+  import { faBomb, faFlag } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faFlag, faBomb } from "@fortawesome/free-solid-svg-icons";
+  import type { Vec2d } from "./types";
+  import { TileState } from "./types";
 
   export let open: () => void;
   export let flag: () => void;
@@ -73,20 +72,18 @@
   .tileflip {
     transform: rotateX(180deg);
   }
+
   .first-side {
     @apply absolute bg-gray-300 w-full h-full rounded;
   }
 
-  @keyframes rainbow {
-    0% {
-      background-position: 0% 82%;
-    }
-    50% {
-      background-position: 100% 19%;
-    }
-    100% {
-      background-position: 0% 82%;
-    }
+  .win-animation {
+    transform-style: preserve-3d;
+    animation-name: win;
+    animation-duration: 5.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .win-first-side {
@@ -105,9 +102,22 @@
     background-size: 1800% 1800%;
     animation: rainbow 10s ease infinite;
   }
+
   .second-side {
     @apply absolute w-full h-full flex flex-col items-center justify-center rounded;
     transform: rotateX(180deg);
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 82%;
+    }
+    50% {
+      background-position: 100% 19%;
+    }
+    100% {
+      background-position: 0% 82%;
+    }
   }
 
   @keyframes win {
@@ -118,13 +128,5 @@
     to {
       transform: rotateX(180deg);
     }
-  }
-  .win-animation {
-    transform-style: preserve-3d;
-    animation-name: win;
-    animation-duration: 5.3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 </style>

@@ -57,8 +57,8 @@
         </div>
       {/each}
     </div>
+    <GameWinLosePopup {reset} {winState} />
   </div>
-  <GameWinLosePopup {reset} {winState} />
 
   <div class="mt-8 text-gray-500">Settings</div>
   <div class="mt-2 flex gap-4 items-center relative">
